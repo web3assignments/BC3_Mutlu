@@ -1,12 +1,12 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract Game {
-    uint256 _stake;
     address _currentAddress;
 
-    constructor(uint256 stake, address currentAddress) public {
-        _stake = stake;
-        _currentAddress = currentAddress;
+    constructor() public payable {
+        require(msg.value >= 1 ether, "No Ether");
+        _currentAddress = msg.sender;
+        guessIfEven(msg.value);
     }
 
     function guessIfEven(uint256 stake) public {
@@ -15,7 +15,7 @@ contract Game {
         }
     }
 
-    function calculateWinning(uint256 stake) public {
+    function calculateWinning(uint256 stake) private {
         uint256 percentage = (stake / _currentAddress.balance) * 100;
         if (percentage > 50) {
             sendRewardToAddress(stake * 3);
@@ -24,7 +24,7 @@ contract Game {
         }
     }
 
-    function sendRewardToAddress(uint256 winning) public {
+    function sendRewardToAddress(uint256 winning) private {
         address payable sendAbleAddress = payable(_currentAddress);
         (bool transferSucceeded, ) = sendAbleAddress.call{value: winning}("");
         require(transferSucceeded, "Transfer failed, you lost everything.");
