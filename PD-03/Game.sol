@@ -18,7 +18,7 @@ contract Game {
         if (stake % 2 == 0) {
             CalculateWinning(stake);
         } else {
-            emit AddressThatLost(msg.sender, stake); //TODO Change address to winner when amount of people in contract is > 1.
+            emit AddressThatLost(msg.sender, stake);
         }
     }
 
