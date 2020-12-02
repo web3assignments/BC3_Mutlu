@@ -34,7 +34,6 @@ var getVanityWallet = function(input = '', isChecksum = false, isContract = fals
         _wallet = getRandomWallet(isChecksum);
     }
     if (isChecksum) _wallet.address = ethUtils.toChecksumAddress(_wallet.address);
-    //console.log(_wallet)
     return _wallet;
 }
 var getDeterministicContractAddress = function(address) {
