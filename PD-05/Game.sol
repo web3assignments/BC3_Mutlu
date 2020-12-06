@@ -11,7 +11,7 @@ contract Game {
         GuessIfEven(msg.value);
     }
 
-    event CalculatedWinnings(address winner, uint256 winning);
+    event CalculatedWinnings(string test, address winner, uint256 winning);
     event AddressThatLost(address winner, uint256 winning);
 
     function GuessIfEven(uint256 stake) public {
@@ -32,7 +32,7 @@ contract Game {
     }
 
     function SendRewardToAddress(uint256 winning) private {
-        emit CalculatedWinnings(msg.sender, winning);
+        emit CalculatedWinnings("test", msg.sender, winning);
         address payable sendAbleAddress = payable(_currentAddress);
         (bool transferSucceeded, ) = sendAbleAddress.call{value: winning}("");
         require(
