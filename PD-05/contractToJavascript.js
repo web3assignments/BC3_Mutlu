@@ -86,11 +86,9 @@ var abi = [
 
 async function Contract() {
 	// web3 provider with fallback for old version
-	// if (typeof window.web3 !== 'undefined') {
-		web3 = new Web3(Web3.givenProvider);
-		var requestAccounts = await web3.eth.requestAccounts();
-		const network = await web3.eth.net.getId();
-		console.log('Injected web3 detected.');
+	web3 = await new Web3(Web3.givenProvider);
+	var requestAccounts = await web3.eth.requestAccounts();
+	console.log('Injected web3 detected.');
 
 	// } else {
 	// 	// Fallback to localhost if no web3 injection. We've configured this to GANACHE
@@ -101,19 +99,18 @@ async function Contract() {
 
 	// Accounts
 	var account;
-	var accounts = web3.eth.getAccounts();
+	var accounts = await web3.eth.getAccounts();
 	account = accounts[0];
 	console.log('Account: ' + account);
 	document.getElementById('currentAddress').innerHTML = account;
 
 	//contract instance
 	contract = new web3.eth.Contract(abi, contractAddress)
-	var outPut = "test";
-		contract.methods.GuessIfEven(2).send({ from: account, value: Web3.utils.toWei('2', 'ether') }, function (error) {
-			console.log(error);
-		}).then(function (receipt) {
-			console.log(receipt)
-		});
+	contract.methods.GuessIfEven(2).send({ from: account, value: Web3.utils.toWei('2', 'ether') }, function (error) {
+		console.log(error);
+	}).then(function (receipt) {
+		console.log(receipt)
+	});
 
 	web3.eth.getBalance(contractAddress, function (err, result) { console.log(result); });
 	console.log(contract);
