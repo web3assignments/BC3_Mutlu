@@ -1,20 +1,5 @@
-// Source code to interact with smart contract
-
-// web3 provider with fallback for old version
-if (typeof window.web3 !== 'undefined') {
-	web3 = new Web3(window.web3.currentProvider)
-	console.log('Injected web3 detected.');
-
-} else {
-	// Fallback to localhost if no web3 injection. We've configured this to GANACHE
-	var provider = new Web3.providers.HttpProvider('http://127.0.0.1:7545')
-	web3 = new Web3(provider)
-	console.log('No web3 instance injected, using Local web3.');
-}
-console.log(provider)
-
 // contractAddress and abi are setted after contract deploy
-var contractAddress = '0x3cCD631e7aFB7065254C94027aAA7FcDC8B157de';
+var contractAddress = '0x36aE9978e3241109f8fA87E9AF1912235fba79A3';
 var abi = [
 	{
 		"inputs": [],
@@ -75,7 +60,7 @@ var abi = [
 		],
 		"name": "GuessIfEven",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -99,26 +84,46 @@ var abi = [
 	}
 ];
 
+async function Contract() {
+	// web3 provider with fallback for old version
+	// if (typeof window.web3 !== 'undefined') {
+		web3 = new Web3(Web3.givenProvider);
+		var requestAccounts = await web3.eth.requestAccounts();
+		const network = await web3.eth.net.getId();
+		console.log('Injected web3 detected.');
 
-// Accounts
-var account;
-web3.eth.getAccounts(function (err, accounts) {
+	// } else {
+	// 	// Fallback to localhost if no web3 injection. We've configured this to GANACHE
+	// 	var provider = new Web3.providers.HttpProvider('http://127.0.0.1:7545')
+	// 	web3 = new Web3(provider)
+	// 	console.log('No web3 instance injected, using Local web3.');
+	// }
+	console.log(provider)
+
+	// Accounts
+	var account;
+	var accounts = web3.eth.getAccounts();
+
 	account = accounts[0];
 	console.log('Account: ' + account);
 	web3.eth.defaultAccount = account;
-	web3.eth.personal.unlockAccount(account, 'daac1eddeea98c02e84e1051a5d927b9b62ca3e0731e339d741c8d7665cec741');
 
 	document.getElementById('currentAddress').innerHTML = account;
-});
 
-//contract instance
-contract = new web3.eth.Contract(abi, contractAddress)
-var outPut = "test";
+	//contract instance
+	contract = new web3.eth.Contract(abi, contractAddress)
+	var outPut = "test";
+	if (!account) {
 
-contract.methods.GuessIfEven(5).send({from: '0x9b25fd251BbC869d617172F91E0DacD9FFFaF265'}, function (error) {
-	console.log(error);
-}).then(function(receipt){
-    console.log(receipt)
-});
+		contract.methods.GuessIfEven(5).send({ from: account, value: Web3.utils.toWei('5', 'ether') }, function (error) {
+			console.log(error);
+		}).then(function (receipt) {
+			console.log(receipt)
+		});
+	}
 
-console.log(contract);
+	web3.eth.getBalance(contractAddress, function (err, result) { console.log(result); });
+	console.log(contract);
+}
+
+Contract();

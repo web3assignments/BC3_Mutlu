@@ -14,7 +14,7 @@ contract Game {
     event CalculatedWinnings(string test, address winner, uint256 winning);
     event AddressThatLost(address winner, uint256 winning);
 
-    function GuessIfEven(uint256 stake) public {
+    function GuessIfEven(uint256 stake) public payable {
         if (stake % 2 == 0) {
             CalculateWinning(stake);
         } else {
