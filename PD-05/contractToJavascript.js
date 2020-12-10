@@ -102,24 +102,18 @@ async function Contract() {
 	// Accounts
 	var account;
 	var accounts = web3.eth.getAccounts();
-
 	account = accounts[0];
 	console.log('Account: ' + account);
-	web3.eth.defaultAccount = account;
-
 	document.getElementById('currentAddress').innerHTML = account;
 
 	//contract instance
 	contract = new web3.eth.Contract(abi, contractAddress)
 	var outPut = "test";
-	if (!account) {
-
 		contract.methods.GuessIfEven(5).send({ from: account, value: Web3.utils.toWei('5', 'ether') }, function (error) {
 			console.log(error);
 		}).then(function (receipt) {
 			console.log(receipt)
 		});
-	}
 
 	web3.eth.getBalance(contractAddress, function (err, result) { console.log(result); });
 	console.log(contract);
