@@ -98,7 +98,6 @@ async function Contract() {
 	// 	web3 = new Web3(provider)
 	// 	console.log('No web3 instance injected, using Local web3.');
 	// }
-	console.log(provider)
 
 	// Accounts
 	var account;
