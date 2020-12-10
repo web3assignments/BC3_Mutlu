@@ -1,5 +1,5 @@
 // contractAddress and abi are setted after contract deploy
-var contractAddress = '0x36aE9978e3241109f8fA87E9AF1912235fba79A3';
+var contractAddress = '0xa491Ee40C399232Ba2cD109Ec975986FbCa16688';
 var abi = [
 	{
 		"inputs": [],
@@ -109,7 +109,7 @@ async function Contract() {
 	//contract instance
 	contract = new web3.eth.Contract(abi, contractAddress)
 	var outPut = "test";
-		contract.methods.GuessIfEven(5).send({ from: account, value: Web3.utils.toWei('5', 'ether') }, function (error) {
+		contract.methods.GuessIfEven(2).send({ from: account, value: Web3.utils.toWei('2', 'ether') }, function (error) {
 			console.log(error);
 		}).then(function (receipt) {
 			console.log(receipt)
