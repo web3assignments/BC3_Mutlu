@@ -4,7 +4,8 @@
     {
       "inputs": [],
       "stateMutability": "payable",
-      "type": "constructor"
+      "type": "constructor",
+      "payable": true
     },
     {
       "anonymous": false,
@@ -67,7 +68,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -80,7 +82,8 @@
       "name": "GuessIfEven",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"winning\",\"type\":\"uint256\"}],\"name\":\"AddressThatLost\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"test\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"winning\",\"type\":\"uint256\"}],\"name\":\"CalculatedWinnings\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"}],\"name\":\"GuessIfEven\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"currentAddressesInContract\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/MutluB/Documents/VSCode Clone/BC3_Mutlu/PD-07/contracts/Game.sol\":\"Game\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/MutluB/Documents/VSCode Clone/BC3_Mutlu/PD-07/contracts/Game.sol\":{\"keccak256\":\"0xe1222a1f96b301f4c26f0b1467271beb233c4a2ec0d62fa5f35757054601c05a\",\"urls\":[\"bzz-raw://4b02005cf38db07a0e256de20db7b445ad410ce75641dd4959bfb73681ebb2a8\",\"dweb:/ipfs/QmPcFWeAC1xJ5ZnyGNbFhC5GcYdhTsgE4zaZnu2ZWEpFpf\"]}},\"version\":1}",
@@ -4067,9 +4070,62 @@
     "name": "solc",
     "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "4": {
+      "events": {
+        "0x5bbdbd011d4cf68ea520999af505d45cd93eacd8d69f39641356ea2de747f7f1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "winner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "winning",
+              "type": "uint256"
+            }
+          ],
+          "name": "AddressThatLost",
+          "type": "event"
+        },
+        "0x2eedbe3480ad2bd28011b78381d6fe1c31b225ec843c2ebda8d94679baf58dab": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "test",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "winner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "winning",
+              "type": "uint256"
+            }
+          ],
+          "name": "CalculatedWinnings",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xE413CFf29719c12a921A3B63a8f03B3FC3781586",
+      "transactionHash": "0x9f256075a220a825dbff716036305d79468beb8f923b76370ffab7b37eb80d5a"
+    }
+  },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-10T15:21:40.673Z",
+  "updatedAt": "2020-12-11T15:01:40.651Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
