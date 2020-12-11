@@ -18,7 +18,7 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+// const HDWalletProvider = require('@truffle/hdwallet-provider');-
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
@@ -26,11 +26,9 @@
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret")
-//     .toString().trim(); // contains mnemonic
-// const infuraKey = fs.readFileSync(".infura")
-//     .toString().trim(); // infura key
+const fs = require('fs');
+const mnemonic = "gadget decline access fork champion sorry pink chaos dilemma light please vehicle";
+const infuraKey = "161b8c6879a74e2b8a0153677a2645ad";
 
 var adr;
 
@@ -77,7 +75,7 @@ module.exports = {
         }
         return adr
       },
-      network_id: 1,       // athereum id
+      network_id: 4,       // athereum id
       gas: 300000,  // limit 25968880
       gasPrice: 470000000000, // minimum amount
       skipDryRun: true
