@@ -1,5 +1,5 @@
 // contractAddress and abi are setted after contract deploy
-var contractAddress = '0xA4a8979A7C5E85CC7aBF86D6e156873759cfAFd2';
+var contractAddress = '0xa491Ee40C399232Ba2cD109Ec975986FbCa16688';
 var abi = [
 	{
 		"inputs": [],
@@ -30,6 +30,12 @@ var abi = [
 		"inputs": [
 			{
 				"indexed": false,
+				"internalType": "string",
+				"name": "test",
+				"type": "string"
+			},
+			{
+				"indexed": false,
 				"internalType": "address",
 				"name": "winner",
 				"type": "address"
@@ -54,7 +60,7 @@ var abi = [
 		],
 		"name": "GuessIfEven",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -91,7 +97,7 @@ async function Contract() {
 	// 	console.log('No web3 instance injected, using Local web3.');
 	// }
 
-	// Accounts
+	// Accounts	
 	var account;
 	var accounts = await web3.eth.getAccounts();
 	account = accounts[0];
