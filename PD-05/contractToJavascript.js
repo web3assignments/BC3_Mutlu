@@ -107,13 +107,14 @@ async function Contract() {
 	//contract instance
 	contract = new web3.eth.Contract(abi, contractAddress)
 	contract.methods.GuessIfEven(2).send({ from: account, value: Web3.utils.toWei('2', 'ether') }, function (error) {
+		document.getElementById('outPut').innerHTML = receipt;
 		console.log(error);
 	}).then(function (receipt) {
+		document.getElementById('outPut').innerHTML = receipt;
 		console.log(receipt)
 	});
 
 	web3.eth.getBalance(contractAddress, function (err, result) { console.log(result); });
 	console.log(contract);
 }
-
 Contract();

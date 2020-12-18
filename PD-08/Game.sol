@@ -1,4 +1,4 @@
-pragma solidity ^0.7.0;
+pragma solidity >0.6.12;
 import "github.com/provable-things/ethereum-api/provableAPI_0.6.sol";
 
 contract Game is usingProvable {
