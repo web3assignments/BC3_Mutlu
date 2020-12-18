@@ -107,10 +107,9 @@ async function Contract() {
 	//contract instance
 	contract = new web3.eth.Contract(abi, contractAddress)
 	contract.methods.GuessIfEven(0).send({ from: account, value: Web3.utils.toWei('0', 'ether') }, function (error) {
-		if(error.message != null){
-		document.getElementById('outPut').innerHTML = error.message;
+		document.getElementById('outPut').innerHTML = error;
 		console.log("outPut Error: ", error);
-		}	
+		
 	}).then(function (receipt) {
 		document.getElementById('outPut').innerHTML = receipt.events.returnValues.winner;
 		document.getElementById('outPutAmount').innerHTML = receipt.events.returnValues.winning;
