@@ -112,8 +112,8 @@ async function Contract() {
 		
 	}).then(function (receipt) {
 		console.log("Succes outPut Receipt: ", receipt)	
-		document.getElementById('outPut').innerHTML = receipt.events.returnValues.winner;
-		document.getElementById('outPutAmount').innerHTML = receipt.events.returnValues.winning;
+		document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
+		document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
 	});
 
 	web3.eth.getBalance(contractAddress, function (err, result) { console.log("Balance: ",result); });
