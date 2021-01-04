@@ -1,0 +1,23 @@
+{
+  "name": "BC3_Mutlu",
+  "version": "1.0.0",
+  "description": "Put the results of each subject in the appropriate subdirectory.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3assignments/BC3_Mutlu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web3assignments/BC3_Mutlu/issues"
+  },
+  "homepage": "https://github.com/web3assignments/BC3_Mutlu#readme",
+  "dependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.3.1"
+  }
+}

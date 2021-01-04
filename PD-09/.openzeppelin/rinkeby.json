@@ -1,0 +1,225 @@
+{
+  "manifestVersion": "3.1",
+  "impls": {
+    "eb32a79e634b94fe53b433f629c20bb680bd3101deda51f41b272e0c59ef607a": {
+      "address": "0xfd49C1651C1Cd4929302954feCAba73FA2b57A4b",
+      "txHash": "0xa8a69e3efa333209f03a275da84758f7937c90bee221b64730ecf75441cfcd2b",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:23"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:28"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:63"
+          },
+          {
+            "contract": "Game",
+            "label": "_currentAddress",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:6"
+          },
+          {
+            "contract": "Game",
+            "label": "currentAddressesInContract",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:7"
+          },
+          {
+            "contract": "Game",
+            "label": "temp",
+            "type": "t_bytes_storage",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:8"
+          },
+          {
+            "contract": "Game",
+            "label": "priceOfUrl",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:9"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_bytes_storage": {
+            "label": "bytes"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "d2d43c20501dd425f4600af958403e9dde592c27ec27908fa3d74cef64c2fa94": {
+      "address": "0x88C4F2e77d1E76719B2F21f40fA10a88acC86fAE",
+      "txHash": "0x8aceabe01f1639bd30540270740f7850b0bda5143ad059cfbfa46a4e5f5c4baa",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:23"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:28"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:63"
+          },
+          {
+            "contract": "Game",
+            "label": "_currentAddress",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:6"
+          },
+          {
+            "contract": "Game",
+            "label": "currentAddressesInContract",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:7"
+          },
+          {
+            "contract": "Game",
+            "label": "temp",
+            "type": "t_bytes_storage",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:8"
+          },
+          {
+            "contract": "Game",
+            "label": "priceOfUrl",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\Game.sol:9"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_bytes_storage": {
+            "label": "bytes"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "0c6f56e24b68ac308fa36829892dd51e63b0189fe513a8f75d784610c34738b5": {
+      "address": "0x00820D35f1ca2b849e0BF0ad7DB076A1198B2910",
+      "txHash": "0x7ec9b8cb34ba450b39fe4ff6fc1f041d50b919e238a810732a75ba0ce23a98ba",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:23"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:28"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\upgrades-core\\contracts\\Initializable.sol:63"
+          },
+          {
+            "contract": "UpdatedGame",
+            "label": "_currentAddress",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\UpdatedGame.sol:6"
+          },
+          {
+            "contract": "UpdatedGame",
+            "label": "currentAddressesInContract",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\UpdatedGame.sol:7"
+          },
+          {
+            "contract": "UpdatedGame",
+            "label": "temp",
+            "type": "t_bytes_storage",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\UpdatedGame.sol:8"
+          },
+          {
+            "contract": "UpdatedGame",
+            "label": "priceOfUrl",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\UpdatedGame.sol:9"
+          },
+          {
+            "contract": "UpdatedGame",
+            "label": "owner",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\..\\C\\Users\\MutluB\\Documents\\VSCode Clone\\BC3_Mutlu\\PD-09\\contracts\\UpdatedGame.sol:10"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_bytes_storage": {
+            "label": "bytes"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    }
+  },
+  "admin": {
+    "address": "0xccdcc6627Ad1667212d1d2bdce3DD4e85201625e",
+    "txHash": "0xcc5cae3451d776ccbd7b46a6b0f28611ada7b071ffe33d8e353f3fd9be06128e"
+  }
+}
