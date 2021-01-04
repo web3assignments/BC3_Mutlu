@@ -7,7 +7,6 @@ module.exports = async function(deployer) {
     const GameUpdatedContract=await upgradeProxy(GameContract.address, GameUpdated,{deployer });
     console.log(`Address of GameContract: ${GameContract.address}`)
     console.log(`Address of GameUpdatedContract: ${GameUpdatedContract.address}`)
-    console.log("Doing some tests with the just upgraded contract");
     // await GameUpdatedContract.GuessIfEven(1, {value: 1000000000000000000});
     // console.log(await GameUpdatedContract.CalculatedWinnings());
 }
