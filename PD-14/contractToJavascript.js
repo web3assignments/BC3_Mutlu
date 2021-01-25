@@ -108,7 +108,7 @@ async function Contract() {
 	//contract instance
 	const name = 'gameguessifeven.eth';
 	var ensAddress = await web3.eth.ens.getAddress(name);
-
+console.log("ens address: " + ensAddress);
 	contract = new web3.eth.Contract(abi, ensAddress)
 	contract.methods.GuessIfEven(0).send({ from: account, value: Web3.utils.toWei('0', 'ether') }, function (error) {
 		document.getElementById('outPut').innerHTML = error;
