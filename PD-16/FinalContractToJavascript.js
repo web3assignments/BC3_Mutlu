@@ -294,6 +294,9 @@ var abi = [
 	}
 ];
 
+var account;
+
+
 async function Contract() {
 	// web3 provider with fallback for old version
 	web3 = await new Web3(Web3.givenProvider);
@@ -308,7 +311,6 @@ async function Contract() {
 	// }
 
 	// Accounts	
-	var account;
 	var accounts = await web3.eth.getAccounts();
 	account = accounts[0];
 	console.log('Account: ' + account);
@@ -319,12 +321,13 @@ async function Contract() {
 	web3.eth.getBalance(contractAddress, function (err, result) { console.log("Balance: ",result); });
 	console.log("Contract: ", contract);
 }
+Contract();
 
 function myFunction() {
  var x = document.getElementById("myText").value;
 
 	//contract instance
-	contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei('0', 'ether') }, function (error) {
+	contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei(x, 'ether') }, function (error) {
 		document.getElementById('outPut').innerHTML = error;
 		console.log("outPut Error: ", error);
 		
@@ -335,4 +338,3 @@ function myFunction() {
 	});
   }
 
-Contract();
