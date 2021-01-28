@@ -315,7 +315,7 @@ async function Contract() {
 	console.log("Contract: ", contract);
 }
 
-Contract();
+await Contract();
 
 function myFunction() {
  var x = document.getElementById("myText").value;
