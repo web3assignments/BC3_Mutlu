@@ -315,20 +315,21 @@ async function Contract() {
 	console.log("Contract: ", contract);
 }
 
-await Contract();
+Contract();
 
 function myFunction() {
- var x = document.getElementById("myText").value;
+	var x = document.getElementById("myText").value;
+   
+	   //contract instance
+	   contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei(x, 'ether') }, function (error) {
+		   document.getElementById('outPut').innerHTML = error;
+		   console.log("outPut Error: ", error);
+		   
+	   }).then(function (receipt) {
+		   console.log("Succes outPut Receipt: ", receipt)	
+		   document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
+		   document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
+	   });
+	 }
 
-	//contract instance
-	contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei(x, 'ether') }, function (error) {
-		document.getElementById('outPut').innerHTML = error;
-		console.log("outPut Error: ", error);
-		
-	}).then(function (receipt) {
-		console.log("Succes outPut Receipt: ", receipt)	
-		document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
-		document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
-	});
-  }
 
