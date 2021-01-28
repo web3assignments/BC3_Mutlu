@@ -326,7 +326,7 @@ function myFunction() {
 		   
 	   }).then(function (receipt) {
 		   console.log("Succes outPut Receipt: ", receipt)	
-		   if(receipt.events.CalculatedWinnings.returnValues.winner){
+		   if(receipt.events.CalculatedWinnings != undefined){
 			document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
 			document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
 		   }else{
