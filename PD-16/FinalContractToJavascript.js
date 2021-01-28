@@ -298,6 +298,8 @@ var account;
 
 
 async function Contract() {
+	var a = document.getElementById("loader");
+	a.style.display = "none";
 	// web3 provider with fallback for old version
 	web3 = await new Web3(Web3.givenProvider);
 	var requestAccounts = await web3.eth.requestAccounts();
@@ -318,7 +320,7 @@ Contract();
 
 function myFunction() {
 	var x = document.getElementById("myText").value;
-	var a = document.getElementById("loader").value;
+	var a = document.getElementById("loader");
 	if (a.style.display === "none") {
 		a.style.display = "block";
 	  } else {
