@@ -302,14 +302,7 @@ async function Contract() {
 	web3 = await new Web3(Web3.givenProvider);
 	var requestAccounts = await web3.eth.requestAccounts();
 	console.log('Injected web3 detected.');
-
-	// } else {
-	// 	// Fallback to localhost if no web3 injection. We've configured this to GANACHE
-	// 	var provider = new Web3.providers.HttpProvider('http://127.0.0.1:7545')
-	// 	web3 = new Web3(provider)
-	// 	console.log('No web3 instance injected, using Local web3.');
-	// }
-
+	
 	// Accounts	
 	var accounts = await web3.eth.getAccounts();
 	account = accounts[0];
@@ -321,6 +314,7 @@ async function Contract() {
 	web3.eth.getBalance(contractAddress, function (err, result) { console.log("Balance: ",result); });
 	console.log("Contract: ", contract);
 }
+
 Contract();
 
 function myFunction() {
