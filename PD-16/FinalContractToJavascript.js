@@ -307,7 +307,6 @@ async function Contract() {
 	var accounts = await web3.eth.getAccounts();
 	account = accounts[0];
 	console.log('Account: ' + account);
-	document.getElementById('currentAddress').innerHTML = account;
 
 	contract = new web3.eth.Contract(abi, contractAddress)
 
@@ -319,16 +318,24 @@ Contract();
 
 function myFunction() {
 	var x = document.getElementById("myText").value;
-   
+	var a = document.getElementById("loader").value;
+	if (a.style.display === "none") {
+		a.style.display = "block";
+	  } else {
+		a.style.display = "none";
+	  }
+
 	   //contract instance
 	   contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei(x, 'ether') }, function (error) {
 		   document.getElementById('outPut').innerHTML = error;
 		   console.log("outPut Error: ", error);
 		   
 	   }).then(function (receipt) {
+		a.style.display = "none";
 		   console.log("Succes outPut Receipt: ", receipt)	
 		   document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
 		   document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
+		   
 	   });
 	 }
 

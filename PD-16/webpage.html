@@ -7,12 +7,29 @@
     <script src="./FinalContractToJavascript.js"></script>
   </head>
 
+  <style>
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite; /* Safari */
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+
   <body class="container">
     <h1 class="page-header">Gamble everything!</h1>
     <img src="oddeven200x150.png" alt="Trulli" width="200" height="150">
     <div class="row">
       <input type="number" id="myText" value="Put here how much Eth you want to gamble">
       <button onclick="myFunction()">Try it</button>
+      <div id="loader"></div>
       <div>
         <form class="form-inline" role="form">
           <div class="form-group">
