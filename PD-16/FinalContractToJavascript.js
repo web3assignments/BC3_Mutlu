@@ -318,18 +318,20 @@ Contract();
 
 function myFunction() {
 	var x = document.getElementById("myText").value;
-	
+
 	   //contract instance
 	   contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei(x, 'ether') }, function (error) {
 		   document.getElementById('outPut').innerHTML = error;
 		   console.log("outPut Error: ", error);
 		   
 	   }).then(function (receipt) {
-		a.style.display = "none";
 		   console.log("Succes outPut Receipt: ", receipt)	
-		   document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
-		   document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
-		   
+		   if(receipt.events.CalculatedWinnings.returnValues.winner){
+			document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
+			document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
+		   }else{
+			document.getElementById('outPut').innerHTML = "You lost everything, Try again maybe you'll be lucky this time??"
+		   }
 	   });
 	 }
 
