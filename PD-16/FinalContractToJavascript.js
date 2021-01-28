@@ -298,8 +298,6 @@ var account;
 
 
 async function Contract() {
-	var a = document.getElementsByClassName("loader");
-	a.style.display = "none";
 	// web3 provider with fallback for old version
 	web3 = await new Web3(Web3.givenProvider);
 	var requestAccounts = await web3.eth.requestAccounts();
@@ -320,13 +318,7 @@ Contract();
 
 function myFunction() {
 	var x = document.getElementById("myText").value;
-	var a = document.getElementsByClassName("loader");
-	if (a.style.display === "none") {
-		a.style.display = "block";
-	  } else {
-		a.style.display = "none";
-	  }
-
+	
 	   //contract instance
 	   contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei(x, 'ether') }, function (error) {
 		   document.getElementById('outPut').innerHTML = error;
