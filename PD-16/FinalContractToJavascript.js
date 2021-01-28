@@ -314,9 +314,17 @@ async function Contract() {
 	console.log('Account: ' + account);
 	document.getElementById('currentAddress').innerHTML = account;
 
-	//contract instance
 	contract = new web3.eth.Contract(abi, contractAddress)
-	contract.methods.GuessIfEven(0).send({ from: account, value: Web3.utils.toWei('0', 'ether') }, function (error) {
+
+	web3.eth.getBalance(contractAddress, function (err, result) { console.log("Balance: ",result); });
+	console.log("Contract: ", contract);
+}
+
+function myFunction() {
+ var x = document.getElementById("myText").value;
+
+	//contract instance
+	contract.methods.GuessIfEven(x).send({ from: account, value: Web3.utils.toWei('0', 'ether') }, function (error) {
 		document.getElementById('outPut').innerHTML = error;
 		console.log("outPut Error: ", error);
 		
@@ -325,8 +333,6 @@ async function Contract() {
 		document.getElementById('outPut').innerHTML = receipt.events.CalculatedWinnings.returnValues.winner;
 		document.getElementById('outPutAmount').innerHTML = receipt.events.CalculatedWinnings.returnValues.winning;
 	});
+  }
 
-	web3.eth.getBalance(contractAddress, function (err, result) { console.log("Balance: ",result); });
-	console.log("Contract: ", contract);
-}
 Contract();
